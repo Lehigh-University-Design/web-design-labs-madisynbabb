@@ -1,0 +1,191 @@
+:root {
+    --background-color: cadetblue;
+    --light-color: #ffffff;
+    --dark-color: #000000;
+
+    /* unvisited link */
+a:link {
+    color: black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: purple;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: cadetblue;
+  }
+  
+  /* selected link */
+  a:active {
+    color: cadetblue;
+  }
+}
+
+body {
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--background-color);
+    margin: 0 1en;
+    font-size: 16px;
+}
+
+main {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-head {
+    margin-left: auto;
+    order: 0;
+}
+
+#head h3 a {
+    text-decoration: none;
+}
+
+h1 {font-weight: 100;
+    font-size: 2em;
+}
+
+p {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    margin: auto;
+}
+
+.post {
+    border: 1px solid var(--dark-color);
+    margin-bottom: 1em;
+    padding: 1em 1em; 
+}
+
+#special-post {
+    border: 1px solid var(--dark-color);
+    background-color: tan;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.grid-child {
+    min-height: 3em;
+    background-color: rgb(222, 195, 225);
+}
+
+.grid-layout-parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 5fr;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.grid-layout-chess {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: 1em;
+}
+
+.grid-child-chess {
+    aspect-ratio: 1;
+    background-color: rgb(222, 195, 225);
+    transition: 0.5s;
+}
+
+.grid-child-chess:nth-child(-n + 8):nth-child(even),
+.grid-child-chess:nth-child(n + 8):nth-child(-n + 16):nth-child(odd),
+.grid-child-chess:nth-child(n + 17):nth-child(-n + 24):nth-child(even),
+.grid-child-chess:nth-child(n + 25):nth-child(-n + 32):nth-child(odd),
+.grid-child-chess:nth-child(n + 33):nth-child(-n + 40):nth-child(even),
+.grid-child-chess:nth-child(n + 41):nth-child(-n + 48):nth-child(odd),
+.grid-child-chess:nth-child(n + 49):nth-child(-n + 56):nth-child(even),
+.grid-child-chess:nth-child(n + 57):nth-child(-n + 64):nth-child(odd) {
+    background-color: rgb(160, 121, 164)
+}
+
+.grid-child-chess:hover {
+    background-color: black !important;
+  }
+
+.grid-assign-parent {
+    display: grid;
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.grid-assign-child {
+    min-height: 1em;
+    background-color: rgb(222, 195, 225);
+}
+
+.grid-assign-special-child {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    background-color: rgb(160, 121, 164);
+  }
+
+  .grid-area-parent {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 1em;
+    margin-bottom: 1em;
+    grid-template-areas:
+      'sidebar header'
+      'sidebar main';
+  }
+  .grid-area-child {
+    min-height: 1em;
+    background-color: #d6d6d6;
+  }
+  .area-header {
+    grid-area: header;
+  }
+  .area-sidebar {
+    grid-area: sidebar;
+  }
+  .area-main {
+    grid-area: main;
+  }
+  .grid-alignment-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center; /* start, center, end, space-between, space-around, space-evenly  */
+    justify-items: center; /* stretch, start, center, end */
+    align-content: center; /* start, center, end, space-between, space-around, space-evenly  */
+    align-items: center; /* stretch, start, center, end */
+    gap: 1em;
+    margin-bottom: 1em;
+    background-color: #d6e568;
+    min-height: 15em;
+  }
+  .grid-alignment-child {
+    width: 100px;
+    min-height: 1em;
+    background-color: white;
+  }
+  .quick-center-trick {
+    height: 60vh;
+    background-color: #600060;
+    display: grid;
+    place-content: center; /*start, center, end (shorthand for justify-content with align-content)*/
+  }
